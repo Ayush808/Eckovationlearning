@@ -11,6 +11,25 @@ const path = require('path')
 //import the .env file
 require('dotenv').config()
 
+//import routes 
+const authRoutes = require('./routes/auth')
+const userRoutes = require('./routes/user')
+const courseRoutes = require('./routes/course')
+const categoryRoutes = require('./routes/category')
+
+//middlewares
+app.use(bodyParser.json())
+app.use(cookieparser())
+app.use(expressValidator())
+app.use(cors())
+
+
+//routes middleware
+app.use("/api", authRoutes)
+app.use("/api", userRoutes)
+app.use("/api", courseRoutes)
+app.use("/api", categoryRoutes)
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => { console.log("Mongo connected!") })
@@ -22,10 +41,10 @@ mongoose.connection.on('error', err => {
 
 
 // Serve static assets in production
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build'))
-})
+// app.use(express.static(path.join(__dirname, './client/build')))
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, './client/build'))
+// })
 
 
 // application running on
