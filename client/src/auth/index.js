@@ -1,4 +1,3 @@
-import { API } from '../config'
 require('dotenv').config()
 
 const signup = (user) => {
