@@ -24,15 +24,15 @@ const Menu = ({ history }) => (
                     {!isAuthenticated() && (
                         <Fragment>
                             <Link
+                                to="/signin"
                                 className="btn btn-primary mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/signin")}
-                                to="/signin">
+                                style={isActive(history, "/signin")}>
                                 Log In
                             </Link>
                             <Link
+                                to="/signup"
                                 className="btn btn-warning mr-1 my-2 px-4 py-2"
-                                style={isActive(history, "/signup")}
-                                to="/signup">
+                                style={isActive(history, "/signup")}>
                                 Sign Up
                             </Link>
                         </Fragment>
@@ -80,7 +80,7 @@ const Menu = ({ history }) => (
                                     history.push('/')
                                 })}>
                                 Signout
-                                </span>
+                            </span>
                         </Fragment>
                     )}
                 </ul>
