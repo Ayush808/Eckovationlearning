@@ -40,11 +40,15 @@ mongoose.connection.on('error', err => {
 })
 
 
-//Serve static assets in production
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build'))
-})
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 
 // application running on
