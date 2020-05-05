@@ -3,15 +3,8 @@ import { Link, withRouter } from "react-router-dom"
 import { signout, isAuthenticated } from '../auth'
 import LOGOIMG from '../compicon.png'
 
-const isActive = (history, path) => {
-    if (history.location.pathname === path) {
-        return { color: "black" }
-    } else {
-        return { color: "black" }
-    }
-}
 
-const Menu = ({ history }) => (
+const NavBar = ({ history }) => (
     <header className="navbar">
         <div className="container" style={{ height: "auto" }}>
             <a className="navbar-brand mb-2">
@@ -26,14 +19,12 @@ const Menu = ({ history }) => (
                             <Link
                                 to="/signin"
                                 className="btn btn-primary mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/signin")}>
-                                Log In
+                            >Log In
                             </Link>
                             <Link
                                 to="/signup"
                                 className="btn btn-warning mr-1 my-2 px-4 py-2"
-                                style={isActive(history, "/signup")}>
-                                Sign Up
+                            >Sign Up
                             </Link>
                         </Fragment>
                     )}
@@ -41,13 +32,11 @@ const Menu = ({ history }) => (
                         <Fragment>
                             <Link
                                 className="btn btn-primary mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/")}
                                 to="/">
                                 <i className="fa fa-home"></i> Home
                             </Link>
                             <Link
                                 className="btn btn-warning mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/user/dashboard")}
                                 to="/user/dashboard">
                                 Dashboard
                             </Link>
@@ -58,13 +47,11 @@ const Menu = ({ history }) => (
                         <Fragment>
                             <Link
                                 className="btn btn-primary mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/")}
                                 to="/">
                                 <i className="fa fa-home"></i> Home
                             </Link>
                             <Link
                                 className="btn btn-warning mr-5 my-2 px-4 py-2"
-                                style={isActive(history, "/admin/dashboard")}
                                 to="/admin/dashboard">
                                 Dashboard
                             </Link>
@@ -89,4 +76,4 @@ const Menu = ({ history }) => (
     </header>
 );
 
-export default withRouter(Menu);
+export default withRouter(NavBar);
