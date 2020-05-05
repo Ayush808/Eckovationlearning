@@ -13,9 +13,9 @@ const isActive = (history, path) => {
 
 const Menu = ({ history }) => (
     <header className="navbar">
-        <div className="container" style={{ height: "60px" }}>
+        <div className="container" style={{ height: "auto" }}>
             <a className="navbar-brand mb-2">
-                <i><img src={LOGOIMG} width="50" height="50" alt="NA" /></i><b style={{ fontSize: "30px" }}> Learn&Grow</b>
+                <i><img src={LOGOIMG} width="50" height="50" alt="NA" /></i><b style={{ fontSize: "30px", margin: "auto" }}> Learn&Grow</b>
             </a>
 
             <nav className="nav navbar-body">

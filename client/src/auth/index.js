@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const signup = (user) => {
     //console.log(name, email, password)
-    return fetch(`${process.env.REACT_APP_API_URL}/signUp`, {
+    return fetch(`/api/signUp`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -22,7 +22,7 @@ const signup = (user) => {
 
 export const signin = (user) => {
     //console.log(name, email, password)
-    return fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+    return fetch(`/api/signin`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -49,7 +49,7 @@ export const signout = (next) => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem('jwt')
         next()
-        return fetch(`${process.env.REACT_APP_API_URL}/signOut`, {
+        return fetch(`/signOut`, {
             method: 'GET'
         }).then(response => {
             console.log(response)
