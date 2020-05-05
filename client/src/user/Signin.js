@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Model from 'react-awesome-modal'
 import { Link, Redirect } from "react-router-dom";
-import Home from "../cores/Home";
 import { signin, authenticate, isAuthenticated } from "../auth/index";
 
 
 const Signin = () => {
 
     const [visible, setVisible] = useState()
+
+    useEffect(() => {
+        openModal()
+    }, [])
+
     const [values, setValues] = useState({
         email: "",
         password: "",
@@ -16,18 +20,12 @@ const Signin = () => {
         redirectToReferrer: false
     })
 
-    useEffect(() => {
-        openModal()
-    }, [])
+
 
     const { email, password, loading, error, redirectToReferrer } = values;
     const { user } = isAuthenticated()
 
     var openModal = () => {
-        setVisible(true)
-    }
-
-    window.onclick = function (event) {
         setVisible(true)
     }
 

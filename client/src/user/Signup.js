@@ -29,10 +29,6 @@ const Signup = () => {
         setVisible(true)
     }
 
-    window.onclick = function (event) {
-        setVisible(true)
-    }
-
     var closeModal = () => {
         setVisible(false)
     }
