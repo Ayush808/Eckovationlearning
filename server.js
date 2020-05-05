@@ -40,11 +40,11 @@ mongoose.connection.on('error', err => {
 })
 
 
-// Serve static assets in production
-// app.use(express.static(path.join(__dirname, './client/build')))
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, './client/build'))
-// })
+//Serve static assets in production
+app.use(express.static(path.join(__dirname, './client/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build'))
+})
 
 
 // application running on
