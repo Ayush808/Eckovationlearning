@@ -2,3 +2,14 @@
     height: 400px;
     width: 100%;
 }
+
+.popbg{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://segev.ca/wp-content/uploads/2020/01/code-web.jpeg');
+    background-size: 100% 100%;
+}
+
+.popup{
+    margin: auto;
+}

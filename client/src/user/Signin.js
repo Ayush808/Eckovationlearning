@@ -119,7 +119,7 @@ const Signin = () => {
     )
 
     return (
-        <div style={{ backgroundImage: "url(https://segev.ca/wp-content/uploads/2020/01/code-web.jpeg)", width: "1360px", height: "640px" }}>
+        <div className="popbg">
             <Model visible={visible} width="600" height="500" effect="fadeInDown" >
                 <div className="row">
                     <div className="col-8">

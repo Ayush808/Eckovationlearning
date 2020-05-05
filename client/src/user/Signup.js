@@ -130,43 +130,43 @@ const Signup = () => {
     }
 
     return (
-        <div style={{
-            backgroundImage: "url(https://segev.ca/wp-content/uploads/2020/01/code-web.jpeg)", width: "1400px", height: "700px"
-        }} >
+        <div className="popbg" >
             {showSuccess()}
             {showError()}
-            <Model visible={visible} width="600" height="500" effect="fadeInDown" >
-                <div className="row">
-                    <div className="col-8" >
-                        <h3 style={{ fontFamily: "cursive", marginLeft: "30px" }}><b>Sign Up</b></h3>
-                    </div>
-                    <div className="col-3">
-                        <Link to='/' type="button" class="close" onClick={() => closeModal()} data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" style={{ fontSize: "30px" }}>&times;</span>
-                        </Link>
-                    </div>
-                </div>
-                <hr />
-                <div className="row">
-                    <div className="col-6">
-                        {SignupForm()}
-                    </div>
-                    <div className="col-5" style={{
-                        backgroundImage: "url(https://cdn.eckovation.com/homepage/bluebg-learnerreview.svg)", width: "250px", height: "360px", borderRadius: "5px"
-                    }}>
-                        <h3 className="text-center"><b style={{ color: "white" }}>Welcome Back</b></h3><br />
-                        <h4 className="text-center" style={{ color: "white" }}>Already have an account?</h4>
-                        <br />
-                        <div className="text-center">
-                            <Link to='/signin' className="btn btn-warning" style={{ paddingRight: "40px", paddingLeft: "40px" }}><i className="fa fa-user"></i>  SignIn</Link>
+            <div className="popup">
+                <Model visible={visible} width="600" height="500" effect="fadeInDown" >
+                    <div className="row">
+                        <div className="col-8" >
+                            <h3 style={{ fontFamily: "cursive", marginLeft: "30px" }}><b>Sign Up</b></h3>
                         </div>
-                        <br /><br /><br />
-                        <div className="text-center">
-                            <Link to='/' className="btn btn-info"><i className="fa fa-book"></i> Explore Course</Link>
+                        <div className="col-3">
+                            <Link to='/' type="button" class="close" onClick={() => closeModal()} data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style={{ fontSize: "30px" }}>&times;</span>
+                            </Link>
                         </div>
                     </div>
-                </div>
-            </Model>
+                    <hr />
+                    <div className="row">
+                        <div className="col-6">
+                            {SignupForm()}
+                        </div>
+                        <div className="col-5" style={{
+                            backgroundImage: "url(https://cdn.eckovation.com/homepage/bluebg-learnerreview.svg)", width: "250px", height: "360px", borderRadius: "5px"
+                        }}>
+                            <h3 className="text-center"><b style={{ color: "white" }}>Welcome Back</b></h3><br />
+                            <h4 className="text-center" style={{ color: "white" }}>Already have an account?</h4>
+                            <br />
+                            <div className="text-center">
+                                <Link to='/signin' className="btn btn-warning" style={{ paddingRight: "40px", paddingLeft: "40px" }}><i className="fa fa-user"></i>  SignIn</Link>
+                            </div>
+                            <br /><br /><br />
+                            <div className="text-center">
+                                <Link to='/' className="btn btn-info"><i className="fa fa-book"></i> Explore Course</Link>
+                            </div>
+                        </div>
+                    </div>
+                </Model>
+            </div>
         </div>
     )
 }
