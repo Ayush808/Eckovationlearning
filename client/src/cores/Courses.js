@@ -106,11 +106,11 @@ const Home = () => {
         <div>
             <NavBar />
             {frontImage()}
-
+            <h1 className="mb-4 text-center jumbotron">Courses</h1>
             <div className="row">
                 <div className="col-sm-3">
                     <div className="jumbotron">
-                        <h4>filter by category</h4>
+                        <h4 style={{ fontFamily: "cursive" }}><b>Filter by category</b></h4>
                         <ul>
                             <Checkbox categories={categories}
                                 handleFilters={filters => {
@@ -121,7 +121,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="jumbotron">
-                        <h4 className="mt-0" style={{ fontFamily: "cursive" }}>filter by price Range</h4>
+                        <h4 style={{ fontFamily: "cursive" }}><b>Filter by price Range</b></h4>
                         <ul>
                             <Radiobox prices={prices}
                                 handleFilters={filters => {
@@ -134,7 +134,6 @@ const Home = () => {
 
                 </div>
                 <div className="col-9">
-                    <h2 className="mb-4">Courses</h2>
                     <div className="row">
                         {filteredResults.map((course, i) => (
                             <div style={{ margin: "auto" }}>
@@ -142,9 +141,6 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
-                </div>
-                <div style={{ margin: "auto" }}>
-                    {loadMoreButton()}
                 </div>
             </div>
 
