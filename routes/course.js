@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 //import  category controller
-const { createCourse, addmoreDetails, courseById, read, remove, updateCourse, list, relatedList, listCategories, getPhoto } = require('../controllers/course')
+const { createCourse, addmoreDetails, courseById, read, remove, updateCourse, list, relatedList, listCategories, getPhoto, listBySearch } = require('../controllers/course')
 //import middleware to ensure category only accessed by admin
 const { isAdmin, isAuth, requireSignIn } = require('../controllers/auth')
 const { userById } = require('../controllers/user')
@@ -17,6 +17,7 @@ router.get('/courses', list)
 router.get('/courses/related/:courseId', relatedList)
 router.get('/courses/categories', listCategories)
 router.get('/course/photo/:courseId', getPhoto)
+router.post('/courses/by/search', listBySearch)
 
 router.param("userId", userById)
 router.param("courseId", courseById)

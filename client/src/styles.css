@@ -10,6 +10,13 @@
     background-size: 100% 100%;
 }
 
+.coursesfront{
+    width: 100%;
+    height: 300px;
+    background-image: url('./workonline.jpg');
+    background-size: 100% 100%;
+}
+
 .popup{
     margin: auto;
 }

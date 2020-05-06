@@ -161,7 +161,7 @@ const Signup = () => {
                             </div>
                             <br /><br /><br />
                             <div className="text-center">
-                                <Link to='/' className="btn btn-info"><i className="fa fa-book"></i> Explore Course</Link>
+                                <Link to='/courses' className="btn btn-info"><i className="fa fa-book"></i> Explore Course</Link>
                             </div>
                         </div>
                     </div>

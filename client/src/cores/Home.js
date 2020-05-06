@@ -63,8 +63,7 @@ const Home = () => {
             <div className="row">
                 {courseByEnrolled.map((course, i) => (
                     <div className="row" style={{ margin: "auto" }}>
-
-                        <div className="col-sm-4 mb-4">
+                        <div className="col-sm-4 my-4">
                             <CardView key={i} course={course} />
                         </div>
                     </div>
