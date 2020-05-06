@@ -134,7 +134,7 @@ const Signup = () => {
             {showSuccess()}
             {showError()}
             <div className="popup">
-                <Model visible={visible} width="600" height="500" effect="fadeInDown" >
+                <Model visible={visible} width="600" height="500" effect="fadeInUp" >
                     <div className="row">
                         <div className="col-8" >
                             <h3 style={{ fontFamily: "cursive", marginLeft: "30px" }}><b>Sign Up</b></h3>

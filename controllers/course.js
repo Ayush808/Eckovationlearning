@@ -164,7 +164,7 @@ exports.list = (req, res) => {
     Course.find()
         .select('-photo')
         .populate('category')
-        .sort([sortBy])  // .sort([[sortBy, order]])
+        .sort([[sortBy]])  // .sort([[sortBy, order]])
         .limit(limit)
         .exec((err, courses) => {
             if (err) {
