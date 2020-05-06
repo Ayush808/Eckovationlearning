@@ -7,7 +7,7 @@ import Radiobox from './Radiobox'
 import prices from './PricesFilterOption'
 
 
-const Home = () => {
+const Courses = () => {
 
     const [myFilters, setFilters] = useState({
         filters: { category: [], price: [] }
@@ -148,4 +148,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Courses

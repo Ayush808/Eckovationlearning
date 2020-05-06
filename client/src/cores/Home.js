@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import { getCourses } from './coursesApi'
 import CardView from './CardView'
-import Slider from "react-slick";
 
 const Home = () => {
 
