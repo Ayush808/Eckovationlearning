@@ -136,7 +136,7 @@ const Home = () => {
                 <div className="col-9">
                     <div className="row">
                         {filteredResults.map((course, i) => (
-                            <div style={{ margin: "auto" }}>
+                            <div className="my-3" style={{ margin: "auto" }}>
                                 <CardView key={i} course={course} />
                             </div>
                         ))}

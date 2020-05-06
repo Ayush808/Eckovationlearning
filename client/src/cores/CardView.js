@@ -14,8 +14,6 @@ const CardView = ({ course }) => {
                 <Link to='/' style={{ float: "right" }}>Learn More</Link>
             </div>
         </div>
-
-
     )
 }
 
