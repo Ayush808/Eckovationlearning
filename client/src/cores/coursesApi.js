@@ -17,8 +17,8 @@ export const getAllCategories = () => {
 }
 
 
-export const read = productId => {
-    return fetch(`${process.env.REACT_APP_API_URL}/product/${productId}`, {
+export const read = courseId => {
+    return fetch(`${process.env.REACT_APP_API_URL}/course/${courseId}`, {
         method: "GET"
     })
         .then(response => {

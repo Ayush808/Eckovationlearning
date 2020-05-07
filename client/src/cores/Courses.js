@@ -60,29 +60,6 @@ const Courses = () => {
         })
     }
 
-    const loadMore = (newFilters) => {
-        // console.log(newFilters)
-        let toSkip = skip + limit
-
-        getFilteredCourses(toSkip, limit, newFilters.filters).then(data => {
-            if (data.error) {
-                setError(data.error)
-            } else {
-                setFilteredResults([...filteredResults, ...data.data])
-                setSize(data.size)
-                setSkip(toSkip)
-            }
-        })
-    }
-
-    const loadMoreButton = () => {
-        return (
-            size > 0 && size >= limit && (
-                <button onClick={loadMore} className="btn btn-warning mb-5">Load more</button>
-            )
-        )
-    }
-
     const handlePrice = value => {
         const data = prices
         let array = []
@@ -133,7 +110,7 @@ const Courses = () => {
                     </div>
 
                 </div>
-                <div className="col-9">
+                <div className="col-sm-9">
                     <div className="row">
                         {filteredResults.map((course, i) => (
                             <div className="my-3" style={{ margin: "auto" }}>

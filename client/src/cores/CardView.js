@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 const CardView = ({ course }) => {
+
+    const courseId = course._id
+
     return (
-        <div className="card" style={{ width: "18rem" }} >
+        <Link to={`/course/${courseId}`} className="card" style={{ width: "18rem" }} >
             <img className="card-img-top" src={`/api/course/photo/${course._id}`} alt="course" style={{ maxHeight: "100%", maxWidth: "100% " }} />
             <div className="card-img-overlay">
                 <h5 className="card-title" style={{ color: "white", fontWeight: "bold" }}>{course.name}</h5>
@@ -13,7 +17,7 @@ const CardView = ({ course }) => {
                 <p><i className="fa fa-graduation-cap"></i> {course.enrolled} Learners</p>
                 <Link to='/' style={{ float: "right" }}>Learn More</Link>
             </div>
-        </div>
+        </Link>
     )
 }
 

@@ -21,14 +21,12 @@
     margin: auto;
 }
 
-/* .card:hover{
-    box-shadow: 2px 2px 4px 4px;
-
-} */
+.card:hover{
+    box-shadow: 1px 1px 2px 2px;
+}
 
 .navbar {
     overflow: hidden;
-    background-color: #333;
   }
   
   /* Navbar links */
@@ -52,3 +50,46 @@
       margin: auto;
     }
   }
+
+.courseoverview{
+  height: max-content;
+  background: linear-gradient(rgba(0, 101, 234, 0.8) 50%, rgba(0, 198, 251, 5) 100%);
+  border-radius: 8px;
+  margin: auto;
+}  
+
+.enrollbtn .btn:hover{
+  box-shadow: 2px 2px cornflowerblue;
+}
+
+.coursepart{
+  height: max-content;
+  background-color: white;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.navi {
+  text-align: center;
+  width: 60%;
+  background-color: rgba(15, 126, 230, 0.89);
+  padding: 15px;
+  margin: auto;
+  opacity: 0.9;
+  border-radius: 38px;
+}
+
+.navi li {
+  display: inline;
+  margin: 6%;
+}
+
+.navi li a {
+  font-size: large;
+}
+
+@media (max-width: 768px){
+   .navi {
+    display: none;
+    }
+}
