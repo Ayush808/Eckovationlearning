@@ -24,10 +24,10 @@ const NavBar = ({ history }) => (
 
                     {isAuthenticated() && isAuthenticated().user.role === 0 && (
                         <Fragment>
-                            <Link to="/" className="btn btn-primary mr-5 my-2 px-4 py-2" >
+                            <Link to="/" className="btn btn-primary mr-1 my-2 px-2 py-2" >
                                 <i className="fa fa-home"></i> Home
                             </Link>
-                            <Link to="/user/dashboard" className="btn btn-warning mr-5 my-2 px-4 py-2">
+                            <Link to="/user/dashboard" className="btn btn-warning mr-1 my-2 px-1 py-2">
                                 Dashboard
                             </Link>
                         </Fragment>
@@ -35,10 +35,10 @@ const NavBar = ({ history }) => (
 
                     {isAuthenticated() && isAuthenticated().user.role === 1 && (
                         <Fragment>
-                            <Link to="/" className="btn btn-primary mr-5 my-2 px-4 py-2" >
+                            <Link to="/" className="btn btn-primary mr-1 my-2 px-2 py-2" >
                                 <i className="fa fa-home"></i> Home
                             </Link>
-                            <Link to="/admin/dashboard" className="btn btn-warning mr-5 my-2 px-4 py-2">
+                            <Link to="/admin/dashboard" className="btn btn-warning mr-1 my-2 px-1 py-2">
                                 Dashboard
                             </Link>
                         </Fragment>
@@ -47,7 +47,7 @@ const NavBar = ({ history }) => (
                     {isAuthenticated() && (
                         <Fragment>
                             <span
-                                className="btn btn-danger mr-1 my-2 px-4 py-2"
+                                className="btn btn-danger mr-1 my-2 px-2 py-2"
                                 style={{ cursor: "pointer", color: "black" }}
                                 onClick={() => signout(() => {
                                     history.push('/')

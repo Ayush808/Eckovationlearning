@@ -103,3 +103,62 @@ html {
     display: none;
     }
 }
+
+
+/* Side Nav on DashBoard */
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 260px;
+  background-image: url('https://cdn.eckovation.com/homepage/bluebg-learnerreview.svg');
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: gold;
+  color: black;
+}
+
+.sidebar .homebtn {
+  background-color: rgba(236, 226, 166, 0.993);
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: rgba(236, 226, 166, 0.993);
+  color: black;
+}
+
+div.content {
+  margin-left: 265px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+}
