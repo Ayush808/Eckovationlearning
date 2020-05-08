@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import { read } from './coursesApi'
 import { isAuthenticated } from '../auth'
 import FAQ from './FAQ'
+import Footer from './Footer'
 
 const Course = props => {
 
@@ -142,6 +143,7 @@ const Course = props => {
                 </div>
                 <br /><br />
             </div>
+            <Footer />
         </div>
     )
 

@@ -16,9 +16,9 @@ const NavBar = ({ history }) => (
 
                     {!isAuthenticated() && (
                         <Fragment>
-                            <Link to="/courses" className="btn btn-secondary mr-1 my-2 px-4 py-2">Courses</Link>
+                            <Link to="/courses" className="btn btn-secondary mr-1 my-2 px-3 py-2">Courses</Link>
                             <Link to="/signin" className="btn btn-primary mr-1 my-2 px-4 py-2">Log In</Link>
-                            <Link to="/signup" className="btn btn-warning mr-1 my-2 px-4 py-2">Sign Up</Link>
+                            <Link to="/signup" className="btn btn-warning mr-1 my-2 px-3 py-2">Sign Up</Link>
                         </Fragment>
                     )}
 

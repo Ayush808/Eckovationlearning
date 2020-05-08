@@ -5,6 +5,7 @@ import CardView from './CardView'
 import Checkbox from './Checkbox'
 import Radiobox from './Radiobox'
 import prices from './PricesFilterOption'
+import Footer from './Footer'
 
 
 const Courses = () => {
@@ -120,7 +121,7 @@ const Courses = () => {
                     </div>
                 </div>
             </div>
-
+            <Footer />
         </div>
     )
 }
