@@ -57,3 +57,28 @@ export const getFilteredCourses = (skip, limit, filters = {}) => {
             console.log(err)
         })
 }
+
+export const enrollUser = (token, userId, courseId) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/user/enroll/${courseId}/${userId}`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ courseId })
+    }).then(response => {
+        return response.json()
+    }).catch(err => console.log(err))
+}
+
+export const getUserEnrolledCourses = (token, userId) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/user/courses/${userId}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }).then(response => {
+        return response.json()
+    }).catch(err => console.log(err))
+}

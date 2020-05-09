@@ -291,3 +291,17 @@ exports.listBySearch = (req, res) => {
             })
         })
 }
+
+
+exports.incrementEnrollment = (req, res, next) => {
+    let course = req.course
+    course.enrolled = course.enrolled + 1
+    course.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler(err)
+            })
+        }
+        next()
+    })
+}

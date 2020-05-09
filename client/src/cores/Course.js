@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
-import { read } from './coursesApi'
+import { read, enrollUser, getUserEnrolledCourses } from './coursesApi'
 import { isAuthenticated } from '../auth'
 import FAQ from './FAQ'
 import Footer from './Footer'
@@ -10,6 +10,7 @@ const Course = props => {
 
     const [course, setCourse] = useState({})
     const [error, setError] = useState(false)
+    const [enrolledCourses, setEnrolledCourses] = useState([])
 
     const loadSingleCourse = courseId => {
         read(courseId).then(data => {
@@ -21,9 +22,33 @@ const Course = props => {
         })
     }
 
+    const enrollNew = () => {
+        const { token, user: { _id } } = isAuthenticated()
+        enrollUser(token, _id, course._id).then(result => {
+            if (result.error) {
+                setError(result.error)
+            }
+            else {
+                console.log(result)
+            }
+        })
+    }
+
     useEffect(() => {
         const courseId = props.match.params.courseId
         loadSingleCourse(courseId)
+        if (isAuthenticated()) {
+            const { token, user: { _id } } = isAuthenticated()
+            getUserEnrolledCourses(token, _id).then(result => {
+                if (result.error) {
+                    setError(result.error)
+                    console.log(error)
+                }
+                else {
+                    setEnrolledCourses(result)
+                }
+            })
+        }
     }, [props])  // when there is change in the url the useEffect also chnages
 
     return (
@@ -53,8 +78,24 @@ const Course = props => {
                     }
                     <br /><br />
                     <div className="enrollbtn text-center">
-                        {isAuthenticated() && <Link to='/enroll' className="btn btn-warning px-5 pt-2 pb-2 text-white">Enroll</Link>}
-                        {!isAuthenticated() && <Link to='/signin' className="btn btn-warning px-5 pt-2 pb-2 text-white">Enroll</Link>}
+                        {
+                            !isAuthenticated() &&
+                            <Link to="/signin"><button className="btn btn-warning px-5 pt-2 pb-2 text-white"
+                            >Enroll Course</button></Link>
+                        }
+
+                        {
+                            (isAuthenticated() && enrolledCourses.includes(course._id)) &&
+                            <Link to="/user/dashboard"><button className="btn btn-warning px-5 pt-2 pb-2 text-white">Resume course</button></Link>
+
+                        }
+
+                        {
+                            (isAuthenticated() && !enrolledCourses.includes(course._id)) &&
+                            <Link to="/user/dashboard" onClick={() => enrollNew()}>
+                                <button className="btn btn-warning px-5 pt-2 pb-2 text-white">Enroll Course</button></Link>
+                        }
+
                     </div><br /><br /><br />
                 </div><br /><br />
                 <div className="container navi">

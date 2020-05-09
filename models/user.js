@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 //crypto is core node js module to hash the password
 const crypto = require('crypto')
+const { ObjectId } = mongoose.Schema
 //uuid version 1
 const uuidv1 = require('uuid/v1')
 
@@ -34,7 +35,13 @@ const userSchema = new mongoose.Schema({
     },
     typeOfUser: {
         type: String
-    }
+    },
+    mycourses: [
+        {
+            type: ObjectId,
+            ref: 'Course'
+        }
+    ]
 },
     { timestamps: true }
 )
