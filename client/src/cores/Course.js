@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
-import { read, enrollUser, getUserEnrolledCourses } from './coursesApi'
+import { read, enrollUser, getUserEnrolledCourseIds } from './coursesApi'
 import { isAuthenticated } from '../auth'
 import FAQ from './FAQ'
 import Footer from './Footer'
@@ -39,7 +39,7 @@ const Course = props => {
         loadSingleCourse(courseId)
         if (isAuthenticated()) {
             const { token, user: { _id } } = isAuthenticated()
-            getUserEnrolledCourses(token, _id).then(result => {
+            getUserEnrolledCourseIds(token, _id).then(result => {
                 if (result.error) {
                     setError(result.error)
                     console.log(error)

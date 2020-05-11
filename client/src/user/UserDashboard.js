@@ -1,19 +1,34 @@
-import React from 'react'
-import NavBar from '../cores/NavBar'
-import { Link, Redirect, withRouter } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import LOGOIMG from '../compicon.png'
 import { isAuthenticated, signout } from '../auth'
+import { getUserEnrolledCourses, read } from '../cores/coursesApi'
+
 
 
 const UserDashboard = ({ history }) => {
 
-    const { user: { name, role } } = isAuthenticated();
+    const { token, user: { _id, name } } = isAuthenticated();
 
-    const redirectToHome = () => {
-        return (
-            <Redirect to='/' />
-        )
+    const [userEnrolledCourses, setUserEnrolledCoures] = useState([''])
+    const [error, setError] = useState('')
+    const [bool, setBool] = useState(false)
+
+    const getAllUserCourses = () => {
+        getUserEnrolledCourses(token, _id).then((data) => {
+            if (data.error) {
+                setError(data.error)
+            } else {
+                setUserEnrolledCoures(data)
+                //console.log(userEnrolledCourses)
+                setBool(true)
+            }
+        })
     }
+
+    useEffect(() => {
+        getAllUserCourses()
+    }, [])
 
     const sideNav = () => (
         <div>
@@ -43,28 +58,32 @@ const UserDashboard = ({ history }) => {
                     <h3 className="text-warning"><b>My Courses</b></h3>
                     <br />
 
-                    <div className="card mb-3" style={{ maxWidth: "780px" }}>
-                        <div className="row no-gutters mb-2">
+                    {bool === true && userEnrolledCourses && userEnrolledCourses.map((course, i) => (
+                        <div className="card mb-3" style={{ maxWidth: "780px" }}>
 
-                            <div className="col-md-3">
-                                <img src="https://cdn.eckovation.com/images/Full-Stack.png" height="200" className="card-img" alt="..." />
-                            </div>
+                            <div className="row no-gutters mb-2" style={{ height: "max-content" }}>
 
-                            <div className="col-md-6">
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                <div className="col-md-3">
+                                    <img src={`/api/course/photo/${course[0]._id}`} height="200" className="card-img" alt="..." />
                                 </div>
-                            </div>
 
-                            <div className="col-md-3">
-                                <Link to='/' className="btn btn-primary ml-3 px-3 pt-2 pb-2" style={{ marginTop: "50%" }} >Resume Course</Link>
-                            </div>
+                                <div className="col-md-6">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{JSON.stringify(course[0].name)}</h5>
+                                        <p className="card-text">{JSON.stringify(course[0].description.substring(0, 100))}</p>
+                                    </div>
+                                </div>
 
+                                <div className="col-md-3">
+                                    <div className="pause">
+                                        <Link to='/' className="btn btn-primary ml-3 px-3 pt-2 pb-2" style={{ marginTop: "50%" }} >Resume Course</Link>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <progress className="pro" value="65" max="100" style={{ width: "100%", backgroundColor: "yellow", borderRadius: "50%", height: "15" }} />
                         </div>
-                        <progress value="65" max="100" style={{ width: "100%", backgroundColor: "yellow", borderRadius: "50%", height: "15" }} />
-                    </div>
+                    ))}
                     <br /><br />
                 </div>
 

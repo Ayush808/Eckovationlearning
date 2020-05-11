@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import { getCourses } from './coursesApi'
 import CardView from './CardView'
+import Footer from './Footer'
 
 const Home = () => {
 
@@ -68,7 +69,9 @@ const Home = () => {
                     </div>
                 ))}
             </div>
-            <br /><br /><br />
+            <br /><hr /><br />
+            <Footer />
+            <br />
         </div>
     )
 }

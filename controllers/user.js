@@ -37,7 +37,15 @@ exports.updateUser = (req, res) => {
 
 exports.enrollUser = (req, res) => {
     let user = req.profile
-    user.mycourses.push(req.body.courseId)
+    let course = req.course
+    user.coursesId.push(req.body.courseId)
+
+    user.mycourses.push({
+        _id: course._id,
+        name: course.name,
+        description: course.description
+    })
+
     user.save((err, data) => {
         if (err) {
             return res.status(400).json({
@@ -46,6 +54,11 @@ exports.enrollUser = (req, res) => {
         }
         res.json(data)
     })
+}
+
+exports.getUserEnrolledCourseIds = (req, res) => {
+    let user = req.profile
+    res.json(user.coursesId)
 }
 
 exports.getUserEnrolledCourses = (req, res) => {

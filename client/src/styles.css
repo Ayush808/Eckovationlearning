@@ -153,6 +153,14 @@ div.content {
   }
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
+  .pause {
+    position: relative;
+    float: right;
+    top: -100px;
+  }
+  .card {
+    height: max-content;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -160,5 +168,22 @@ div.content {
     text-align: center;
     float: none;
   }
+}
 
+.footimg {
+  background-image: linear-gradient( transparent, mistyrose), url('./workonline.jpg');
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .c1, .c2, .c3, .c4 {
+    text-align: center;
+  }
+  .card {
+    height: 500px;
+  }
+  .pro {
+    display: none;
+  }
 }

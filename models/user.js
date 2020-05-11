@@ -38,8 +38,14 @@ const userSchema = new mongoose.Schema({
     },
     mycourses: [
         {
+            type: Array,
+            default: []
+        }
+    ],
+    coursesId: [
+        {
             type: ObjectId,
-            ref: 'Course'
+            ref: "Course"
         }
     ]
 },

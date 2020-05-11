@@ -72,6 +72,17 @@ export const enrollUser = (token, userId, courseId) => {
     }).catch(err => console.log(err))
 }
 
+export const getUserEnrolledCourseIds = (token, userId) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/user/courseids/${userId}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }).then(response => {
+        return response.json()
+    }).catch(err => console.log(err))
+}
+
 export const getUserEnrolledCourses = (token, userId) => {
     return fetch(`${process.env.REACT_APP_API_URL}/user/courses/${userId}`, {
         method: "GET",
