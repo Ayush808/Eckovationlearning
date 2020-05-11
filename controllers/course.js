@@ -21,7 +21,6 @@ exports.courseById = (req, res, next, id) => {
 //read the course from the req
 exports.read = (req, res) => {
     //photo is made undefined bcz we dont want it be shown in the response bcz photo has large size
-    req.course.photo = undefined
     return res.json(req.course)
 }
 

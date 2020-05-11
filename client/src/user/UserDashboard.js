@@ -28,6 +28,7 @@ const UserDashboard = ({ history }) => {
 
     useEffect(() => {
         getAllUserCourses()
+        //window.location.reload(true);
     }, [])
 
     const sideNav = () => (
@@ -44,6 +45,7 @@ const UserDashboard = ({ history }) => {
                     history.push('/')
                 })}>Sign out</Link>
             </div>
+
             <div class="content jumbotron">
                 <br />
                 <div className="container-fluid coursepart">
@@ -76,7 +78,7 @@ const UserDashboard = ({ history }) => {
 
                                 <div className="col-md-3">
                                     <div className="pause">
-                                        <Link to='/' className="btn btn-primary ml-3 px-3 pt-2 pb-2" style={{ marginTop: "50%" }} >Resume Course</Link>
+                                        <Link to={`/accesscourse/${course[0]._id}`} className="btn btn-primary ml-3 px-3 pt-2 pb-2" style={{ marginTop: "50%" }} >Resume Course</Link>
                                     </div>
                                 </div>
 
@@ -88,7 +90,7 @@ const UserDashboard = ({ history }) => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 
     return (

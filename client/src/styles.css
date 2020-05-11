@@ -183,7 +183,18 @@ div.content {
   .card {
     height: 500px;
   }
+  .card {
+    height: auto;
+  }
   .pro {
     display: none;
+  }
+}
+
+@media screen and (max-width: 786px)
+{ .mobileText h3{
+    font-size: 16px;
+    overflow: hidden;
+    background-color: cornsilk;
   }
 }

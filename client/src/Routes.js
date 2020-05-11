@@ -11,6 +11,7 @@ import Courses from './cores/Courses'
 import Course from './cores/Course'
 import AdminDashboard from './user/AdminDashboard'
 import UserDashboard from './user/UserDashboard'
+import AccessCourse from './cores/AccessCourse'
 
 const Routes = () => {
     return (
@@ -23,6 +24,7 @@ const Routes = () => {
                     <Route path='/courses' exact component={Courses} />
                     <Route path='/course/:courseId' exact component={Course} />
                     <PrivateRoute path='/user/dashboard' exact component={UserDashboard} />
+                    <PrivateRoute path='/accesscourse/:courseId' exact component={AccessCourse} />
                     <AdminRoute path='/admin/dashboard' exact component={AdminDashboard} />
                 </Switch>
             </BrowserRouter>
