@@ -75,8 +75,9 @@ exports.createCourse = (req, res) => {
 
 exports.addmoreDetails = (req, res) => {
     let existingcourse = req.course
-    existingcourse.curriculum = req.body.curriculum
-    existingcourse.instructor = req.body.instructor
+
+    existingcourse.curriculum.push(req.body.curriculum[0])
+    existingcourse.instructor.push(req.body.instructor[0])
 
     existingcourse.save((err, result) => {
         if (err) {

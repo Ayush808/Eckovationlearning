@@ -62,6 +62,9 @@ const AccessCourse = props => {
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body">
                                         {subobj}
+                                        <div style={{ float: "right" }}>
+                                            <a href={`https://www.youtube.com/watch?v=eNBzIS1XHCg&list=PLWKe4JyWpAKTXEZVO93LGktuQooJuHbUU&index=${i + j + 1}`} className="btn btn-primary">Play</a>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
