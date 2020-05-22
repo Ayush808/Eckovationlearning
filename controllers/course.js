@@ -157,7 +157,6 @@ exports.updateCourse = (req, res) => {
 
 exports.list = (req, res) => {
 
-    //    let order = req.query.order ? req.query.order : 'asc'
     let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
     let limit = req.query.limit ? parseInt(req.query.limit) : 6
 
@@ -169,7 +168,7 @@ exports.list = (req, res) => {
         .exec((err, courses) => {
             if (err) {
                 return res.status(400).json({
-                    error: 'Products not found'
+                    error: 'Courses not found'
                 });
             }
             res.json(courses)

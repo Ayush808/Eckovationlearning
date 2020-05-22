@@ -21,7 +21,7 @@ const Footer = () => {
                             <p style={{ fontSize: "20px" }}>Trending News</p>
                         </div>
                         <div className="c2 col-md-2 col-sm-6 col-xs-6">
-                            <h2>Networks</h2><br />
+                            <h2>NETWORKS</h2><br />
                             <p style={{ fontSize: "20px" }}>LinkedIn</p>
                             <p style={{ fontSize: "20px" }}>Twitter</p>
                             <p style={{ fontSize: "20px" }}>Facbook</p>
@@ -33,7 +33,7 @@ const Footer = () => {
                             <p style={{ fontSize: "20px" }}>IoT Course</p>
                         </div>
                         <div className="c4 col-md-2 col-sm-6 col-xs-6">
-                            <h2>COMPANY</h2><br />
+                            <h2>MORE</h2><br />
                             <p style={{ fontSize: "20px" }}>About Us</p>
                             <p style={{ fontSize: "20px" }}>Contact Us</p>
                             <p style={{ fontSize: "20px" }}>Trending News</p>

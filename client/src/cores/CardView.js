@@ -6,7 +6,7 @@ const CardView = ({ course }) => {
     const courseId = course._id
 
     return (
-        <Link to={`/course/${courseId}`} className="card" style={{ width: "18rem", height: "100%" }} >
+        <Link to={`/course/${courseId}`} className="card text-dark" style={{ width: "18rem", height: "100%" }} >
             <img className="card-img-top" src={`/api/course/photo/${course._id}`} alt="course" style={{ maxHeight: "100%", maxWidth: "100% " }} />
             <div className="card-img-overlay">
                 <h5 className="card-title" style={{ color: "white", fontWeight: "bold" }}>{course.name}</h5>

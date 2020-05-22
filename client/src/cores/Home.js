@@ -59,7 +59,7 @@ const Home = () => {
         <div>
             <NavBar />
             {carousel()}
-            <h1 className="mb-4 text-center jumbotron">Trending Courses</h1>
+            <h1 className="mb-4 text-center text-primary jumbotron">Trending Courses</h1>
             <div className="row">
                 {courseByEnrolled.map((course, i) => (
                     <div className="row" style={{ margin: "auto" }}>

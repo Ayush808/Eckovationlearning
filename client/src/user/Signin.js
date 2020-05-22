@@ -123,7 +123,7 @@ const Signin = () => {
             <Model visible={visible} width="600" height="500" effect="fadeInDown" >
                 <div className="row">
                     <div className="col-8">
-                        <h3 style={{ fontFamily: "cursive", marginLeft: "30px" }}><b>Log In</b></h3>
+                        <h3 style={{ fontFamily: "cursive", marginLeft: "30px", marginTop: "15px" }}><b>Log In</b></h3>
                     </div>
                     <div className="col-3" style={{ position: "relative", marginTop: "15px" }}>
                         <Link to='/' type="button" class="close" onClick={() => closeModal()} data-dismiss="modal" aria-label="Close">
