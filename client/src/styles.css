@@ -218,6 +218,7 @@ div.content {
 	font-size: 1.4em;
 	margin-bottom: 10px;
 }
+
 .form-style-5 input[type="text"],
 .form-style-5 input[type="number"],
 .form-style-5 input[type="file"],
@@ -252,6 +253,20 @@ div.content {
 	height:35px;
 }
 .form-style-5 .number {
+	background: gold;
+	color: black;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.number {
 	background: gold;
 	color: black;
 	height: 30px;

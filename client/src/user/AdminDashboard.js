@@ -157,6 +157,7 @@ const AdminDashboard = ({ history }) => {
                     </span>
                 </Link>
                 <a href='/addcourse' className="active">Add Course</a>
+                <a href='/add/category' >Add Category</a>
                 <a href='/courses'>Existing Courses</a>
                 <Link onClick={() => signout(() => {
                     history.push('/')

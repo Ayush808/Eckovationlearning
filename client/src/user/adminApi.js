@@ -31,3 +31,15 @@ export const getSingleCourseJustAdded = (sortBy) => {
         return response.json()
     }).catch(err => console.log(err))
 }
+
+export const addCategory = (category, userId, token) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/category/create/${userId}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": 'application/json',
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(category)
+    }).then(response => { return response.json() })
+        .catch(err => { console.log(err) })
+}

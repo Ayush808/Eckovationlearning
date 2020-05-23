@@ -153,9 +153,9 @@ const AddCourseDetails = () => {
                         <i><img src={LOGOIMG} width="40" height="40" alt="NA" /></i><b style={{ fontSize: "20px" }}> Learn&Grow</b>
                     </span>
                 </Link>
-                <a href='/addcourse' className="active">Add Course</a>
-                <a href='/courses'>Existing Courses
-                0</a>
+                <a href='/admin/dashboard'>Add Course</a>
+                <a href='/addmoredetails' className="active">Add More Detail</a>
+                <a href='/courses'>Existing Courses</a>
             </div>
 
             <div class="content jumbotron">
