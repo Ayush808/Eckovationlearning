@@ -1,7 +1,7 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')//used to generate the signed token 
 const expressJwt = require('express-jwt')// used for authorization check
-const Speakeasy = require('speakeasy')
+const Speakeasy = require('speakeasy') // trying to implement the phone auth using speakeasy
 
 //error handler 
 const { errorHandler } = require('../validator/dbErrorHandler')
